@@ -3,7 +3,13 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { ReactComponent as GirlComputerImg } from "../../assets/GirlComptr.svg";
 
+
+
+
 const SignUp = ({ setStep, handleChange }) => {
+  let input; 
+  const createUser = require('../../Apollo/Mutations/mutations').CREATE_USER;
+  
   const { register, errors, handleSubmit, watch } = useForm({});
   const password = useRef({});
   password.current = watch("password", "");

@@ -4,6 +4,9 @@ import "./App.scss";
 
 import React from "react";
 import { Route } from "react-router-dom";
+import { ApolloProvider } from "@apollo/react-hooks";
+
+import client from "./Apollo/client";
 import LandingPage from "./components/LandingPage/LandingPage.js";
 import SignIn from "./components/SignIn/SignIn";
 import OnBoarding from "./components/on-boarding/onBoarding";
@@ -12,13 +15,15 @@ import Footer from "./components/footer/footer";
 
 function App() {
   return (
-    <div className="App">
-      <Nav />
-      <Route exact path="/" component={LandingPage} />
-      <Route exact path="/signin" component={SignIn} />
-      <Route exact path="/signup" component={OnBoarding} />
-      <Footer />
-    </div>
+    <ApolloProvider client={client}>
+      <div className="App">
+        <Nav />
+        <Route exact path="/" component={LandingPage} />
+        <Route exact path="/signin" component={SignIn} />
+        <Route exact path="/signup" component={OnBoarding} />
+        <Footer />
+      </div>
+    </ApolloProvider>
   );
 }
 
