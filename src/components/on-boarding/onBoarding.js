@@ -14,7 +14,7 @@ const OnBoarding = () => {
     setUser({ ...user, [e.target.name]: e.target.value });
   }
 
-  console.log(user);
+  // console.log(user);
   return (
     <>
       {step === "signUp" ? (

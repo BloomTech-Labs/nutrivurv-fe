@@ -2,19 +2,29 @@ import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { ReactComponent as GirlComputerImg } from "../../assets/GirlComptr.svg";
-
-
-
+import { useMutation } from "@apollo/react-hooks";
+import { CREATE_USER } from "../../Apollo/Mutations/mutations";
 
 const SignUp = ({ setStep, handleChange }) => {
-  let input; 
-  const createUser = require('../../Apollo/Mutations/mutations').CREATE_USER;
-  
+  let input;
+  const [createUser, { data }] = useMutation(CREATE_USER);
+
   const { register, errors, handleSubmit, watch } = useForm({});
   const password = useRef({});
   password.current = watch("password", "");
-  const onSubmit = async (data) => {
-    alert(JSON.stringify(data));
+  const onSubmit = async (info) => {
+    alert(JSON.stringify(info));
+    console.log(info);
+    createUser({
+      variables: {
+        info: {
+          name: info.username,
+          email: info.email,
+          password: info.password,
+        },
+      },
+    });
+    console.log("data", data);
     setStep("GettingPersonal");
   };
 
@@ -34,13 +44,18 @@ const SignUp = ({ setStep, handleChange }) => {
                 className="rounded p-3 w-100 border border-primary"
                 placeholder="First and Last Name"
                 onChange={handleChange}
-                ref={register({
-                  required: "Required",
-                  pattern: {
-                    value: /\b[^\d\W]+\b/g,
-                    message: "Invalid name entry",
-                  },
-                })}
+                ref={
+                  (register({
+                    required: "Required",
+                    pattern: {
+                      value: /\b[^\d\W]+\b/g,
+                      message: "Invalid name entry",
+                    },
+                  }),
+                  (node) => {
+                    input = node;
+                  })
+                }
               />
               {errors.username && errors.username.message}
             </div>
