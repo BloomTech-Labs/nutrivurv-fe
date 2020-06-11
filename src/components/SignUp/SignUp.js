@@ -1,17 +1,17 @@
-import React, { useRef } from "react";
-import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-import { ReactComponent as GirlComputerImg } from "../../assets/GirlComptr.svg";
-import { useMutation } from "@apollo/react-hooks";
-import { CREATE_USER } from "../../Apollo/Mutations/mutations";
+import React, { useRef } from 'react';
+import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
+import { ReactComponent as GirlComputerImg } from '../../assets/GirlComptr.svg';
+import { useMutation } from '@apollo/react-hooks';
+import { CREATE_USER } from '../../Apollo/Mutations/mutations';
 
 const SignUp = ({ setStep, handleChange }) => {
-  let input;
-  const [createUser, { data }] = useMutation(CREATE_USER);
+  
+  const [createUser] = useMutation(CREATE_USER);
 
   const { register, errors, handleSubmit, watch } = useForm({});
   const password = useRef({});
-  password.current = watch("password", "");
+  password.current = watch('password', '');
   const onSubmit = async (info) => {
     alert(JSON.stringify(info));
     console.log(info);
@@ -24,8 +24,8 @@ const SignUp = ({ setStep, handleChange }) => {
         },
       },
     });
-    console.log("data", data);
-    setStep("GettingPersonal");
+
+    setStep('GettingPersonal');
   };
 
   return (
@@ -44,18 +44,13 @@ const SignUp = ({ setStep, handleChange }) => {
                 className="rounded p-3 w-100 border border-primary"
                 placeholder="First and Last Name"
                 onChange={handleChange}
-                ref={
-                  (register({
-                    required: "Required",
-                    pattern: {
-                      value: /\b[^\d\W]+\b/g,
-                      message: "Invalid name entry",
-                    },
-                  }),
-                  (node) => {
-                    input = node;
-                  })
-                }
+                ref={register({
+                  required: 'Required',
+                  pattern: {
+                    value: /\b[^\d\W]+\b/g,
+                    message: 'Invalid name entry',
+                  },
+                })}
               />
               {errors.username && errors.username.message}
             </div>
@@ -68,10 +63,10 @@ const SignUp = ({ setStep, handleChange }) => {
                 placeholder="email@email.com"
                 onChange={handleChange}
                 ref={register({
-                  required: "Required",
+                  required: 'Required',
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                    message: "invalid email address",
+                    message: 'invalid email address',
                   },
                 })}
               />
@@ -87,14 +82,14 @@ const SignUp = ({ setStep, handleChange }) => {
                 onChange={handleChange}
                 type="password"
                 ref={register({
-                  required: "You must specify a password",
+                  required: 'You must specify a password',
                   minLength: {
                     value: 8,
-                    message: "Password must have at least 8 characters",
+                    message: 'Password must have at least 8 characters',
                   },
                   maxLength: {
                     value: 12,
-                    message: "Password cannot have more than 12 characters",
+                    message: 'Password cannot have more than 12 characters',
                   },
                 })}
               />
@@ -110,7 +105,7 @@ const SignUp = ({ setStep, handleChange }) => {
                 type="password"
                 ref={register({
                   validate: (value) =>
-                    value === password.current || "The passwords do not match",
+                    value === password.current || 'The passwords do not match',
                 })}
               />
               {errors.password_repeat && (
