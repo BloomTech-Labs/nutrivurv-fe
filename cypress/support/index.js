@@ -16,6 +16,5 @@ import "./commands";
 // https://on.cypress.io/configuration
 // ***********************************************************
 
-
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

@@ -1,25 +1,26 @@
 import React from "react";
 import { connect, useSelector } from "react-redux";
-import {login} from '../../../State/Slices/slices'
+import { login } from "../../../State/Slices/slices";
 import Axios from "axios";
 import { data } from "jquery";
 
-var jwt_decode = require('jwt-decode');
+var jwt_decode = require("jwt-decode");
 
-
-const NextBttn = ({ handleSubmit, nextStep}) => {
-  
+const NextBttn = ({ handleSubmit, nextStep }) => {
   const onSubmit = async (data) => {
     console.log(data);
-    const {username, email, password} = data;
-    Axios
-      .post(`https://nutrivurv-be.herokuapp.com/api/auth/register`,{name: username, email: email, password: password})
-      .then(res=>{
+    const { username, email, password } = data;
+    Axios.post(`https://nutrivurv-be.herokuapp.com/api/auth/register`, {
+      name: username,
+      email: email,
+      password: password,
+    })
+      .then((res) => {
         console.log(res.data);
       })
-      .catch(err => console.log('error',err))
-    nextStep()
-  }
+      .catch((err) => console.log("error", err));
+    nextStep();
+  };
 
   return (
     <>
@@ -35,6 +36,4 @@ const NextBttn = ({ handleSubmit, nextStep}) => {
   );
 };
 
-export default connect(
-  null,
-) (NextBttn);
+export default connect(null)(NextBttn);

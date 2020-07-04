@@ -8,7 +8,7 @@ import WeightGoals from "./WeightGoals";
 import BMI from "./bmi-calc/BMI";
 import DietaryPref from "./dietaryPref";
 import GettingStarted from "./gettingStarted";
-import history from '../../history';
+import history from "../../history";
 
 const OnBoarding = ({ step, nextStep, prevStep }) => {
   const [user, setUser] = useState({
@@ -81,7 +81,7 @@ const OnBoarding = ({ step, nextStep, prevStep }) => {
           handleChange={handleChange}
         />
       ) : (
-        <SignIn history ={history}/>
+        <SignIn history={history} />
       )}
     </>
   );

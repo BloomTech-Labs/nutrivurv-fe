@@ -1,17 +1,15 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { connect, useSelector } from "react-redux";
-import {RootState} from '../../State/reducers';
+import { RootState } from "../../State/reducers";
 
-var jwt_decode = require('jwt-decode');
-
+var jwt_decode = require("jwt-decode");
 
 const ProtectedRoute = ({ component: Component, ...props }) => {
-
-  const token = useSelector((state: RootState) => state.auth.token)  
-  const token2 = jwt_decode(localStorage.getItem('token'))
-  console.log('token2',token2)
-  console.log('token',token)
+  const token = useSelector((state: RootState) => state.auth.token);
+  const token2 = jwt_decode(localStorage.getItem("token"));
+  console.log("token2", token2);
+  console.log("token", token);
   return (
     <Route
       {...props}
@@ -26,6 +24,4 @@ const ProtectedRoute = ({ component: Component, ...props }) => {
   );
 };
 
-export default connect(
-  null,
-) (ProtectedRoute);
+export default connect(null)(ProtectedRoute);

@@ -1,10 +1,10 @@
-import {combineReducers} from '@reduxjs/toolkit';
-import authReducer from '../Slices/slices';
+import { combineReducers } from "@reduxjs/toolkit";
+import authReducer from "../Slices/slices";
 
 const rootReducer = combineReducers({
-    auth: authReducer
-})
+  auth: authReducer,
+});
 
-export type RootState = ReturnType<typeof rootReducer>
+export type RootState = ReturnType<typeof rootReducer>;
 
-export default rootReducer
+export default rootReducer;

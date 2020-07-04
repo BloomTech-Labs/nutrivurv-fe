@@ -5,26 +5,26 @@ const { createSlice, combineReducers } = require("@reduxjs/toolkit");
 const SignUpSlice = createSlice({
   name: "auth",
   initialState: {
-    user:{
-      name:'',
-      email:'',
-      password:'',
+    user: {
+      name: "",
+      email: "",
+      password: "",
     },
-    token:{},
+    token: {},
     isFetchingLogin: false,
-    isLoggedIn: false
-
+    isLoggedIn: false,
   },
   reducers: {
-    login(state, action){
-      return{
+    login(state, action) {
+      return {
         ...state,
         token: action.payload,
         isFetchingLogin: true,
-      }
+      };
     },
-}})
+  },
+});
 
-export const {login} = SignUpSlice.actions;
+export const { login } = SignUpSlice.actions;
 
-export default SignUpSlice.reducer
+export default SignUpSlice.reducer;

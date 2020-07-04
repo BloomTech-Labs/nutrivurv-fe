@@ -8,15 +8,10 @@ import { connect } from "react-redux";
 import Axios from "axios";
 import { data } from "jquery";
 
-
-
-
-
-const SignUp = ({ nextStep, prevStep, handleChange, user}) => {
-  const { register, errors, handleSubmit, watch,} = useForm({});
+const SignUp = ({ nextStep, prevStep, handleChange, user }) => {
+  const { register, errors, handleSubmit, watch } = useForm({});
   const password = useRef({});
   password.current = watch("password", "");
-
 
   return (
     <div>
@@ -121,7 +116,7 @@ const SignUp = ({ nextStep, prevStep, handleChange, user}) => {
                 </small>
               )}
             </div>
-            <NextBttn handleSubmit={handleSubmit} nextStep={nextStep}/>
+            <NextBttn handleSubmit={handleSubmit} nextStep={nextStep} />
             <BackBttn prevStep={prevStep} />
           </form>
           <div className="d-flex justify-content-center mt-3 p-2">
@@ -135,6 +130,4 @@ const SignUp = ({ nextStep, prevStep, handleChange, user}) => {
   );
 };
 
-export default connect(
-  null,
-)(SignUp)
+export default connect(null)(SignUp);

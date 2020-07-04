@@ -7,12 +7,11 @@ import HomeContainer from "./components/Container/HomeContainer";
 import DashboardContainer from "./components/Container/DashboardContainer";
 import { Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
-import {store} from './State/configureStore';
-
+import { store } from "./State/configureStore";
 
 function App() {
   return (
-    <Provider store = {store}>
+    <Provider store={store}>
       <div className="App">
         <Switch>
           <Route exact path="/dashboard" component={DashboardContainer} />
@@ -22,5 +21,5 @@ function App() {
     </Provider>
   );
 }
- 
+
 export default App;
