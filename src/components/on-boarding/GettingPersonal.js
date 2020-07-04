@@ -64,8 +64,8 @@ const GettingPersonal = ({ nextStep, prevStep, handleChange, user }) => {
               <option disabled value="">
                 Gender
               </option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
               <option value="Non-Binary">Non-Binary</option>
             </select>
             {errors.gender && (
