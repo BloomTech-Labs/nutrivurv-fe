@@ -39,21 +39,20 @@ describe("Landing page", () => {
     cy.go("back");
   });
 
-  it("navbar sign up link should work and go to /signup", () => {
-    cy.get("#signUp").click();
+  it("navbar sign up link should work and go to /onboarding", () => {
+    cy.get("#onboarding").click();
     cy.location().should((loc) => {
-      expect(loc.pathname).to.eq("/signup");
+      expect(loc.pathname).to.eq("/onboarding");
     });
     cy.go("back");
   });
 
-  it("Join now button should work", () => {
-    cy.get("#join-now").click();
+  it("sign up button should work and go to /onboarding", () => {
+    cy.get("#onboarding-button").click();
+    cy.location().should((loc) => {
+      expect(loc.pathname).to.eq("/onboarding");
+    });
     cy.go("back");
-  });
-
-  it("Sign in button should work", () => {
-    cy.get("#signIn-bttn").click();
   });
 });
 

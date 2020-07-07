@@ -4,16 +4,22 @@
 
 # Nutrivurv
 
-You can find the deployed project at [Nutrivurv](https://www.nutrivurv.com/).
+You can find the deployed project at [nutrivurv.com](https://www.nutrivurv.com/).
 
 ## Contributors
+
+**LABS 20**
+
+|                                        [Alessandra Longaretti](https://github.com/alesslongaretti)                                        |                                       [Christine Smith](https://github.com/ccsmith13)                                        |                                        [Dominic Bridgette](https://github.com/Afrodo1)                                        |                                       [Taty Novell](https://github.com/taty2010)                                        |                                                [Dave Vazquez](https://github.com/dave-vazquez)                                                 |
+| :---------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------: |
+| [<img src="./contributors/alessandra-longaretti.jpeg" width = "200" />](https://github.com/alesslongaretti) </br>Full Stack Web Developer | [<img src="./contributors/christine-smith.png" width = "200" />](https://github.com/ccsmith13) </br>Full Stack Web Developer | [<img src="./contributors/dominic-bridgette.jpeg" width = "200" />](https://github.com/Afrodo1) </br>Full Stack Web Developer | [<img src="./contributors/taty-novell.png" width = "200" />](https://github.com/taty2010) </br>Full Stack Web Developer | [<img src="./contributors/dave-vazquez.jpeg" width = "200" />](https://github.com/dave-vazquez) </br>Full Stack Web Developer /</br> Team Lead |
 
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 ## Project Overview
 
-[Trello Board]
+[Trello Board](https://trello.com/b/9EYWw5vc/labs-pt11-nutrivurv)
 
 [Product Canvas](https://www.notion.so/Nutrition-Tracker-c05986bd547e429f97d2e3a75e97b32d)
 
@@ -25,40 +31,20 @@ Nutrivurv is an application that helps users take control of a healthier lifesty
 
 ### Key Features
 
-- Utilizes world renowned Edamam Food databases
-- Daiy Journal Logs food and generates complete nutritional data for each item
-- Dynamic donut graph charts progress towards multiple goals at once
-- Community forum leverages the power of GraphQL subscriptions to render seamless user interaction
+- Comprehensive onboarding process designed to collect information from user to compute daily caloric/macronutrient budgets based on lifestyle and desired weight targets.
 
 ## Tech Stack
 
-### Front end built using:
+#### Front end deployed to [Heroku](https://nutrivurv.herokuapp.com/) and built using
 
-#### ReactJS
+- **React/Redux** - UI/Application State Managment
+- **BootStrap** - Styling
 
-#### Apollo Server
+#### Back end deployed to [Heroku](https://nutrivurv-be.herokuapp.com/) built using:
 
-- Simplified integration of GraphQL with React
-- Well documented
-- Widely used solution
-
-#### BootStrap
-
-#### Front end deployed to Heroku.
-
-#### [Back end](https://github.com/Lambda-School-Labs/nutrition-tracker-be-pt7) built using:
-
-#### GraphQL
-
-- Efficient
-- Customizable
-- Widely used alternative to traditional REST architecture
-
-#### Prisma
-
-- Simplified schema and query builder
-- Well documented
-- Widely used alternative to ORM service
+- **Postgres** - Data Persistence
+- **ExpressJS** - Server Routing
+- **JWT** - User Session Authentication
 
 ## Edamam Food Database API
 
@@ -75,7 +61,11 @@ All images and icons [Copyright 2020 Katerina Limpitsouni](https://undraw.co/lic
 - Fork and Clone this Repository
 - CD to your local copy of the repo
 - In terminal type EITHER `npm install` or `yarn install`
-- Reference "Other Scripts" below for instructions for your desired environment
+- Create a `.env` file with the following variables:
+  ```
+  REACT_APP_NUTRIVURV_API=https://nutrivurv-be.herokuapp.com
+  NODE_ENV=development
+  ```
 
 # Contributing
 

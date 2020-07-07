@@ -1,87 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@400;600&display=swap");
 
 $link-color: #363537;
-$font-family-sans-serif: 'Muli', sans-serif;
-$light: rgb(240,240,240);
+$font-family-sans-serif: "Muli", sans-serif;
+$light: rgb(240, 240, 240);
 $secondary: #1f7da2;
 
 .text-responsive {
   font-size: calc(100% + 1.5vw + 1.5vh);
-};
+}
 
 .second-text-responsive {
-  font-size: calc(100% + .5vw + .5vh);
-};
+  font-size: calc(100% + 0.5vw + 0.5vh);
+}
 
 .landing-text-responsive {
   font-size: calc(100% + 1vw + 1vh);
-};
+}
 
 .justify {
-  justify-content: space-evenly
-};
+  justify-content: space-evenly;
+}
 
 .img-responsive {
-  max-width: 100%; 
-  max-height: auto; 
-};
+  max-width: 100%;
+  max-height: auto;
+}
 
 .img-responsive-landing {
-  max-width: 70%; 
-  max-height: 300px; 
-};
+  max-width: 70%;
+  max-height: 300px;
+}
 
-.lp-img{
+.lp-img {
   width: 50%;
   height: auto;
   max-width: 100%;
   max-height: 450px;
 }
 
-.datepicker-input{
-  width:250px;
+.datepicker-input {
+  width: 250px;
 }
-.slider-horizontal{
-  width:100%;
-  margin-left:1rem;
-  margin-bottom:1rem;
-  display:block;
-}
-
-.rc-slider-with-marks{
-  margin-bottom: 6rem; 
+.slider-horizontal {
+  width: 100%;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
   display: block;
 }
 
-.rc-slider-mark-text{
+.rc-slider-with-marks {
+  margin-bottom: 6rem;
+  display: block;
+}
+
+.rc-slider-mark-text {
   width: 50px;
 }
 
-.pl-6{
+.pl-6 {
   padding-left: 7rem;
 }
 
-.react-datepicker-wrapper{
-  display: block!important;
+.react-datepicker-wrapper {
+  display: block !important;
 }
 
-
-.pb-6{
+.pb-6 {
   padding-bottom: 7rem;
 }
 
-.mt-6{
+.mt-6 {
   margin-top: 9rem;
-};
+}
 
 .no-arrow {
   -webkit-appearance: none;
-};
+}
 
 .wrapper {
   display: flex;
   width: 100%;
-};
+}
 
 #sidebar {
   min-width: 300px;
@@ -91,10 +90,10 @@ $secondary: #1f7da2;
   left: 0;
   height: 100%;
   z-index: 999;
-  background: rgb(240,240,240);
-  transition: all 0.5s cubic-bezier(0.945, 0.020, 0.270, 0.665);
-  transform-origin: center left; 
-};
+  background: rgb(240, 240, 240);
+  transition: all 0.5s cubic-bezier(0.945, 0.02, 0.27, 0.665);
+  transform-origin: center left;
+}
 
 .sidebar-active {
   transform: rotateY(0deg);
@@ -102,22 +101,21 @@ $secondary: #1f7da2;
 
 @media (max-width: 768px) {
   .sidebar {
-      margin-left: -250px;
-      transform: rotateY(100deg);
+    margin-left: -250px;
+    transform: rotateY(100deg);
   }
-};
+}
 
 li.side-link:hover {
   background-color: #95a5a6;
-  color: #2C3E50;
-};
+  color: #2c3e50;
+}
 
 .primary-color {
-  color: #2C3E50;
+  color: #2c3e50;
 }
 
 @import "~bootswatch/dist/flatly/variables";
 @import "~bootstrap/scss/bootstrap";
 @import "~bootswatch/dist/flatly/bootswatch";
-@import "./components/Marketing//marketing";
-
+@import "./components/Home/components/LandingPage/styles/marketing";

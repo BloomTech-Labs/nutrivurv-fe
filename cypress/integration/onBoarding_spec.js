@@ -1,6 +1,6 @@
 describe("On-Boarding forms", () => {
   it("should sucessfuly load signup page", () => {
-    cy.visit("http://localhost:3000/signup");
+    cy.visit("http://localhost:3000/onboarding");
   });
 
   it("Lets get started page", () => {
@@ -9,7 +9,7 @@ describe("On-Boarding forms", () => {
 
   it("Should complete the Getting Personal form", () => {
     cy.get("form").within(() => {
-      cy.get('input[name="dateOfBirth"]').type("1987-09-29");
+      cy.get('input[name="date_of_birth"]').type("1987-09-29");
       cy.get("select").select("male");
       cy.get("[data-cy=submit]").click();
     });
@@ -24,16 +24,16 @@ describe("On-Boarding forms", () => {
 
   it("Should complete BMI Calc", () => {
     cy.get("form").within(() => {
-      cy.get('input[name="ft"]').type("5");
-      cy.get('input[name="inch"]').type("2");
-      cy.get('input[name="weight"]').type("125");
+      cy.get('input[name="height_ft"]').type("5");
+      cy.get('input[name="height_in"]').type("2");
+      cy.get('input[name="weight_lbs"]').type("125");
       cy.get("[data-cy=submit]").click();
     });
   });
 
   it("Should complete Weight Goal form", () => {
     cy.get("form").within(() => {
-      cy.get('input[name="goalWeight"]').clear().type("115");
+      cy.get('input[name="target_weight"]').clear().type("115");
       cy.get('[style="transform: translateX(-50%); left: 50%;"]').click();
       cy.get("[data-cy=submit]").click();
     });
@@ -41,11 +41,11 @@ describe("On-Boarding forms", () => {
 
   it("Should test the various validations", () => {
     cy.get("form").within(() => {
-      cy.get('input[name="username"]')
+      cy.get('input[name="name"]')
         .type("12345")
         .then(() => {
           cy.get("[data-cy=submit]").click();
-          cy.get("#usernameErr").should(($usernameErr) => {
+          cy.get("#name-err").should(($usernameErr) => {
             const text = $usernameErr.text();
             expect(text).to.match(/Invalid name entry/);
           });
@@ -90,7 +90,7 @@ describe("On-Boarding forms", () => {
 
   it("Should complete initial sign up form", () => {
     cy.get("form").within(() => {
-      cy.get('input[name="username"]')
+      cy.get('input[name="name"]')
         .clear()
         .type("username")
         .should("have.value", "username");

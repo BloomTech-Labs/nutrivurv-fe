@@ -1,6 +1,11 @@
 describe("Dashboard", () => {
-  it("should succesfully load", () => {
-    cy.visit("http://localhost:3000/dashboard");
+  it("Should successfully complete the signin form and redirect to /dashboard", () => {
+    cy.visit("http://localhost:3000/signin");
+    cy.get("form").within(() => {
+      cy.get('input[name="email"]').type("test1@test.com");
+      cy.get('input[name="password"]').type("123456789");
+      cy.get("[data-cy=submit]").click();
+    });
   });
 
   it("Toggler should not be visibe", () => {
