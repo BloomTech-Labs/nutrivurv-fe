@@ -121,8 +121,4 @@ const SignIn = () => {
   );
 };
 
-<<<<<<< HEAD:src/components/SignIn/SignIn.js
-export default connect(null, mapDispatch)(SignIn);
-=======
 export default SignIn;
->>>>>>> bbfe17d37d9d1ab90f9cb786c639580976998ec3:src/components/Home/components/SignIn.js

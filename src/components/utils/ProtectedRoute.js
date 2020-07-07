@@ -24,8 +24,4 @@ const ProtectedRoute = ({ component: Component, ...props }) => {
   );
 };
 
-<<<<<<< HEAD
-export default connect(null)(ProtectedRoute);
-=======
 export default ProtectedRoute;
->>>>>>> bbfe17d37d9d1ab90f9cb786c639580976998ec3

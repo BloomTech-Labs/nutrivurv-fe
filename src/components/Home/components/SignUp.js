@@ -131,10 +131,6 @@ const SignUp = ({ handleChange, user }) => {
                 </small>
               )}
             </div>
-<<<<<<< HEAD:src/components/SignUp/SignUp.js
-            <NextBttn handleSubmit={handleSubmit} nextStep={nextStep} />
-            <BackBttn prevStep={prevStep} />
-=======
             <button
               data-cy="submit"
               type="submit"
@@ -144,7 +140,6 @@ const SignUp = ({ handleChange, user }) => {
               Continue
             </button>
             <BackBttn />
->>>>>>> bbfe17d37d9d1ab90f9cb786c639580976998ec3:src/components/Home/components/SignUp.js
           </form>
           <div className="d-flex justify-content-center mt-3 p-2">
             <p className="mr-2"> Already a member? </p>
@@ -157,8 +152,4 @@ const SignUp = ({ handleChange, user }) => {
   );
 };
 
-<<<<<<< HEAD:src/components/SignUp/SignUp.js
-export default connect(null)(SignUp);
-=======
 export default SignUp;
->>>>>>> bbfe17d37d9d1ab90f9cb786c639580976998ec3:src/components/Home/components/SignUp.js

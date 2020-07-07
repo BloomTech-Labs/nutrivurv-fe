@@ -6,7 +6,7 @@ describe("My First Test", () => {
 
 describe("Sign In Onboarding", () => {
   it("Should successfully load", () => {
-    cy.visit("http://localhost:3000/signup");
+    cy.visit("http://localhost:3000/onboarding");
   });
 
   it("Continue Button Should Work", () => {
