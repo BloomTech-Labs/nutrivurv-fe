@@ -31,7 +31,7 @@ const SignIn = () => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  if (isAuthenticated) return <Redirect to="/protected" />;
+  if (isAuthenticated) return <Redirect to="/dashboard" />;
 
   return (
     <div>

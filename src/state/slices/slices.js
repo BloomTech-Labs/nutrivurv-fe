@@ -2,6 +2,8 @@ import axios from "axios";
 import { createSlice } from "@reduxjs/toolkit";
 
 const nutrivurvAPI = process.env.REACT_APP_NUTRIVURV_API;
+const edamamAppID = process.env.REACT_APP_EDAMAM_APP_ID;
+const edamamAppKey = process.env.REACT_APP_EDAMAM_APP_KEY;
 
 const initialState = {
   user: {
@@ -90,7 +92,7 @@ export const Edamam = (search) => async (dispatch) => {
   dispatch(callItem());
   try {
     const response = await axios.get(
-      `https://api.edamam.com/api/food-database/v2/parser?app_id=8de772d5&app_key=ba31a7a9230043a9bc36135b1a432184&ingr=${search}`
+      `https://api.edamam.com/api/food-database/v2/parser?app_id=${edamamAppID}&app_key=${edamamAppKey}&ingr=${search}`
     );
     // const data = await response.json();
     dispatch(callItemSuccess(response.data.hints));
