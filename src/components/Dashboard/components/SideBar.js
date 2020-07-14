@@ -44,7 +44,7 @@ const SideBar = () => {
                 id="add-journal"
                 className="btn-primary rounded p-2 border border-primary"
                 style={{ width: "250px" }}
-                onClick={() => history.push("/dashboard/addToJournal")}
+                onClick={() => history.push("/dashboard/food-search")}
               >
                 Add to Journal
               </button>

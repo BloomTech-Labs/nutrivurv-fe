@@ -12,11 +12,7 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <ProtectedRoute
-          exact
-          path="/dashboard"
-          component={DashboardContainer}
-        />
+        <ProtectedRoute path="/dashboard" component={DashboardContainer} />
         <Route path="/" component={Home} />
       </Switch>
     </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { logout } from "../../../state/slices/slices";
-import SearchBar from "./SearchBar";
+import SearchBar from "./FoodSearch/FoodSearch";
 const Dashboard = () => {
   const { isAuthenticated, token } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
