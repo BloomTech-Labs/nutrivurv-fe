@@ -1,7 +1,7 @@
 describe("Food", () => {
   before("Login to the application", function () {
     cy.visit("/signin");
-    cy.typeLogin({ email: "test@mail.com", password: "test12345" });
+    cy.typeLogin({ email: "test@test.com", password: "123456789" });
     cy.get("[data-cy=submit]").click();
   });
   it("sidebar food link should work and go to /", () => {

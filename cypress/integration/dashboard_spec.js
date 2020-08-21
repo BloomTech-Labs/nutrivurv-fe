@@ -1,7 +1,7 @@
 describe("Dashboard", () => {
   it("Should successfully complete the signin form and redirect to /dashboard", () => {
     cy.visit("/signin");
-    cy.typeLogin({ email: "test@mail.com", password: "test12345" });
+    cy.typeLogin({ email: "test@test.com", password: "123456789" });
     cy.get("[data-cy=submit]").click();
   });
 
@@ -34,7 +34,7 @@ describe("Dashboard", () => {
 describe("Dashboard logo and user profile link", () => {
   before("Login to the application", function () {
     cy.visit("/signin");
-    cy.typeLogin({ email: "test@mail.com", password: "test12345" });
+    cy.typeLogin({ email: "test@test.com", password: "123456789" });
     cy.get("[data-cy=submit]").click();
   });
   it("Logo should be visible and link to Home", () => {
